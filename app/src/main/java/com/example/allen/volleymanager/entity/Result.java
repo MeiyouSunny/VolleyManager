@@ -10,17 +10,17 @@ import java.io.Serializable;
  *         必须遵循统一的格式，例如："{"isSuccess":true,"msg":"","data":{"name":"付超"}}";
  * @param <T>
  */
-public class Result implements Serializable {
+public class Result<T> implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private boolean isSuccess;
 	private String msg;
 	private int errorCode;
-	private String data;
+	private T data;
 
 	public Result() {
 	}
 
-	public Result(boolean isSuccess, String msg, int errorCode, String data) {
+	public Result(boolean isSuccess, String msg, int errorCode, T data) {
 		this.isSuccess = isSuccess;
 		this.msg = msg;
 		this.errorCode = errorCode;
@@ -51,11 +51,11 @@ public class Result implements Serializable {
 		this.errorCode = errorCode;
 	}
 
-	public String getData() {
+	public T getData() {
 		return data;
 	}
 
-	public void setData(String data) {
+	public void setData(T data) {
 		this.data = data;
 	}
 
