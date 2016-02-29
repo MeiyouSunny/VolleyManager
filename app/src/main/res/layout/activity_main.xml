@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.nan.volleyexample.MainActivity">
+    tools:context="com.example.allen.volleymanager.sample.MainActivity">
 
     <TextView
         android:id="@+id/textview"

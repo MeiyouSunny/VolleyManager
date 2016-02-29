@@ -20,15 +20,15 @@ import okhttp3.OkHttpClient;
 /**
  * Created by Allen Lin on 2016/02/18.
  */
-public class VolleyManager {
-    private static VolleyManager mVolleyManager = null;
+public class HttpManager {
+    private static HttpManager mHttpManager = null;
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
 
     /**
      * @param context
      */
-    public VolleyManager(Context context) {
+    public HttpManager(Context context) {
 
         mRequestQueue = Volley.newRequestQueue(context, new OkHttp3Stack(new OkHttpClient()));
 
@@ -37,13 +37,13 @@ public class VolleyManager {
     }
 
     /**
-     * @return VolleyManager instance
+     * @return HttpManager instance
      */
-    public static synchronized VolleyManager newInstance() {
-        if (mVolleyManager == null) {
-            mVolleyManager = new VolleyManager(App.getContext());
+    public static synchronized HttpManager getInstance() {
+        if (mHttpManager == null) {
+            mHttpManager = new HttpManager(App.getContext());
         }
-        return mVolleyManager;
+        return mHttpManager;
     }
 
     private <T> Request<T> add(Request<T> request) {
@@ -118,7 +118,6 @@ public class VolleyManager {
         mImageLoader.get(imgViewUrl, listener);
     }
 
-
     /**
      * ImageLoader指定图片大小
      *
@@ -153,6 +152,10 @@ public class VolleyManager {
         request.setTag(tag);
         add(request);
         return request;
+    }
+
+    public <T> GsonRequest<T> GsonPostRequest(Object tag, BaseRequestParameter requestParameter, String url, Class<T> clazz, Response.Listener<T> listener, Response.ErrorListener errorListener) {
+        return GsonPostRequest(tag, requestParameter.getParams(), url, clazz, listener, errorListener);
     }
 
     /**

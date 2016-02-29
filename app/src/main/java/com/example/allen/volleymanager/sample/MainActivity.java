@@ -12,7 +12,9 @@ import com.android.volley.VolleyError;
 import com.example.allen.volleymanager.R;
 import com.example.allen.volleymanager.config.Urls;
 import com.example.allen.volleymanager.entity.Person;
-import com.example.allen.volleymanager.volley.VolleyManager;
+import com.example.allen.volleymanager.entity.Result;
+import com.example.allen.volleymanager.volley.HttpManager;
+import com.example.allen.volleymanager.volley.LoginRequest;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,13 +34,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        getJson();
-        getImage();
-        getCircleImage();
+//        getJson();
+//        getImage();
+//        getCircleImage();
+
+        testGoodDrive();
+    }
+
+    private void testGoodDrive() {
+        LoginRequest request = new LoginRequest();
+        request.phoneNum = "13540154458";
+        request.pwd = "123456";
+        HttpManager.getInstance().GsonPostRequest(TAG, request, Urls.URL_GoodDrive, Result.class,
+                new Response.Listener<Result>() {
+                    @Override
+                    public void onResponse(Result result) {
+                        Log.v(TAG, result.toString());
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, error.getMessage(), error);
+                    }
+                });
     }
 
     private void getJson() {
-        VolleyManager.newInstance().GsonGetRequest(TAG, Urls.mJsonUrl, Person.class,
+        HttpManager.getInstance().GsonGetRequest(TAG, Urls.mJsonUrl, Person.class,
                 new Response.Listener<Person>() {
                     @Override
                     public void onResponse(Person person) {
@@ -54,13 +76,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getImage() {
-        VolleyManager.newInstance().ImageLoaderRequest
+        HttpManager.getInstance().ImageLoaderRequest
                 (mImageview, Urls.mImageUrl, R.mipmap.ic_default, R.mipmap.ic_error);
     }
 
-
     private void getCircleImage() {
-        VolleyManager.newInstance().ImageRequest(TAG, Urls.mImageUrl,
+        HttpManager.getInstance().ImageRequest(TAG, Urls.mImageUrl,
                 new Response.Listener<Bitmap>() {
                     @Override
                     public void onResponse(Bitmap bitmap) {
@@ -77,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if (VolleyManager.newInstance() != null) {
-            VolleyManager.newInstance().cancel(TAG);
+        if (HttpManager.getInstance() != null) {
+            HttpManager.getInstance().cancel(TAG);
         }
 
     }
