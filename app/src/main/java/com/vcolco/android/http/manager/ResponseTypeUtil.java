@@ -1,4 +1,4 @@
-package com.vcolco.android.http.volley;
+package com.vcolco.android.http.manager;
 
 import com.vcolco.android.http.config.Urls;
 import com.vcolco.android.http.entity.LoginRs;

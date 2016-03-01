@@ -13,8 +13,8 @@ import com.vcolco.android.http.R;
 import com.vcolco.android.http.config.Urls;
 import com.vcolco.android.http.entity.Person;
 import com.vcolco.android.http.entity.Result;
-import com.vcolco.android.http.volley.HttpManager;
-import com.vcolco.android.http.volley.LoginRequest;
+import com.vcolco.android.http.manager.HttpManager;
+import com.vcolco.android.http.request.LoginRequest;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

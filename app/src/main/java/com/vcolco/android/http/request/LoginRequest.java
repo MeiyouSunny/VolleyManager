@@ -1,4 +1,6 @@
-package com.vcolco.android.http.volley;
+package com.vcolco.android.http.request;
+
+import com.vcolco.android.http.manager.BaseRequestParameter;
 
 /**
  * Created by HuangJW on 2016/2/29 0029 下午 2:26.

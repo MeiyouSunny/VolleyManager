@@ -1,8 +1,5 @@
 package com.vcolco.android.http.entity;
 
-/**
- * Created by Allen Lin on 2016/02/17.
- */
 public class Person {
 
     private String gender;
@@ -10,7 +7,6 @@ public class Person {
     private String first_name;
 
     private String last_name;
-
 
     public void setGender(String gender) {
         this.gender = gender;

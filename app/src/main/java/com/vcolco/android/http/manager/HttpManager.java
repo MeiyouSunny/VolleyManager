@@ -1,4 +1,4 @@
-package com.vcolco.android.http.volley;
+package com.vcolco.android.http.manager;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -18,7 +18,10 @@ import java.util.WeakHashMap;
 import okhttp3.OkHttpClient;
 
 /**
- * Created by Allen Lin on 2016/02/18.
+ * HttpManager:负责管理发送请求,取消请求
+ * Created by HuangJW on 2016/2/29 0029 下午 2:16.
+ * Mail: 499655607@qq.com
+ * Powered by Vcolco
  */
 public class HttpManager {
     private static HttpManager mHttpManager;

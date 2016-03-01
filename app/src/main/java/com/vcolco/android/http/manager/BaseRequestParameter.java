@@ -1,4 +1,4 @@
-package com.vcolco.android.http.volley;
+package com.vcolco.android.http.manager;
 
 import java.util.HashMap;
 import java.util.Map;

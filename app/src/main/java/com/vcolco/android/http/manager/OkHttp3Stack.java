@@ -1,4 +1,4 @@
-package com.vcolco.android.http.volley;
+package com.vcolco.android.http.manager;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -26,7 +26,10 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
- * Created by Allen Lin on 2016/02/17.
+ * OkHttp实现的Volley请求HttpStack
+ * Created by HuangJW on 2016/2/29 0029 下午 2:16.
+ * Mail: 499655607@qq.com
+ * Powered by Vcolco
  */
 public class OkHttp3Stack implements HttpStack {
     private final OkHttpClient mClient;

@@ -3,9 +3,6 @@ package com.vcolco.android.http;
 import android.app.Application;
 import android.content.Context;
 
-/**
- * Created by Allen Lin on 2016/02/17.
- */
 public class App extends Application {
     private static Context sContext;
 

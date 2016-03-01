@@ -1,4 +1,4 @@
-package com.vcolco.android.http.volley;
+package com.vcolco.android.http.manager;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -16,7 +16,10 @@ import java.lang.reflect.Type;
 import java.util.Map;
 
 /**
- * Created by Allen Lin on 2016/02/17.
+ * GsonRequest请求返回指定的实体
+ * Created by HuangJW on 2016/2/29 0029 下午 2:16.
+ * Mail: 499655607@qq.com
+ * Powered by Vcolco
  */
 public class GsonRequest<T> extends Request<T> {
 
