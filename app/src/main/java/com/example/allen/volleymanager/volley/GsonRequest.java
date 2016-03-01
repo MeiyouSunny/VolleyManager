@@ -9,7 +9,6 @@ import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.HttpHeaderParser;
-import com.example.allen.volleymanager.config.Urls;
 import com.google.gson.Gson;
 
 import java.io.UnsupportedEncodingException;
@@ -24,12 +23,16 @@ public class GsonRequest<T> extends Request<T> {
     private final Listener<T> mListener;
     private static Gson mGson = new Gson();
     private Map<String, String> mParams;//post Params
+    private Type responseType; // 返回数据实体转换类型Type
 
-    public GsonRequest(int method, Map<String, String> params, String url, Listener<T> listener,
+    public GsonRequest(int method, Map<String, String> params, String url, Type type, Listener<T> listener,
                        ErrorListener errorListener) {
         super(method, url, errorListener);
+        if (type == null)
+            throw new IllegalArgumentException("GsonRequest with type==null");
         mListener = listener;
         mParams = params;
+        this.responseType = type;
         setMyRetryPolicy();
     }
 
@@ -40,8 +43,8 @@ public class GsonRequest<T> extends Request<T> {
     }
 
     //get
-    public GsonRequest(String url, Listener<T> listener, ErrorListener errorListener) {
-        this(Method.GET, null, url, listener, errorListener);
+    public GsonRequest(String url, Type type, Listener<T> listener, ErrorListener errorListener) {
+        this(Method.GET, null, url, type, listener, errorListener);
     }
 
     @Override
@@ -53,7 +56,6 @@ public class GsonRequest<T> extends Request<T> {
     protected Response<T> parseNetworkResponse(NetworkResponse response) {
         try {
             String jsonString = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
-            Type responseType = ResponseTypeUtil.getApiResponseType(Urls.URL_GoodDrive);
             return (Response<T>) Response.success(mGson.fromJson(jsonString, responseType),
                     HttpHeaderParser.parseCacheHeaders(response));
         } catch (UnsupportedEncodingException e) {
