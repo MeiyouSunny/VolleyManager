@@ -1,8 +1,8 @@
-package com.example.allen.volleymanager.volley;
+package com.vcolco.android.http.volley;
 
-import com.example.allen.volleymanager.config.Urls;
-import com.example.allen.volleymanager.entity.LoginRs;
-import com.example.allen.volleymanager.entity.Result;
+import com.vcolco.android.http.config.Urls;
+import com.vcolco.android.http.entity.LoginRs;
+import com.vcolco.android.http.entity.Result;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;

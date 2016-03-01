@@ -1,4 +1,4 @@
-package com.example.allen.volleymanager;
+package com.vcolco.android.http;
 
 import android.app.Application;
 import android.content.Context;

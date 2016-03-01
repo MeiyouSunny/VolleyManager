@@ -1,4 +1,4 @@
-package com.example.allen.volleymanager.volley;
+package com.vcolco.android.http.volley;
 
 import java.util.HashMap;
 import java.util.Map;

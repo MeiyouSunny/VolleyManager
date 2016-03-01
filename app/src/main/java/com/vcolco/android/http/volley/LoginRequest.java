@@ -1,4 +1,4 @@
-package com.example.allen.volleymanager.volley;
+package com.vcolco.android.http.volley;
 
 /**
  * Created by HuangJW on 2016/2/29 0029 下午 2:26.

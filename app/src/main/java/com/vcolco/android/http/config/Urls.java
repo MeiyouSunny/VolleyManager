@@ -1,4 +1,4 @@
-package com.example.allen.volleymanager.config;
+package com.vcolco.android.http.config;
 
 /**
  * Created by Allen Lin on 2016/02/21.

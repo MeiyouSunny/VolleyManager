@@ -1,4 +1,4 @@
-package com.example.allen.volleymanager.volley;
+package com.vcolco.android.http.volley;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -7,7 +7,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.allen.volleymanager.App;
+import com.vcolco.android.http.App;
 
 import java.lang.reflect.Type;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.example.allen.volleymanager.entity;
+package com.vcolco.android.http.entity;
 
 import java.io.Serializable;
 

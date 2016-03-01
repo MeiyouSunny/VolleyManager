@@ -1,4 +1,4 @@
-package com.example.allen.volleymanager.volley;
+package com.vcolco.android.http.volley;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;

@@ -1,4 +1,4 @@
-package com.example.allen.volleymanager.entity;
+package com.vcolco.android.http.entity;
 
 /**
  * Created by Allen Lin on 2016/02/17.
